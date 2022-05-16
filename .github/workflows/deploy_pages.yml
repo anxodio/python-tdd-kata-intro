@@ -15,7 +15,7 @@ jobs:
       - name: Build the static presentation
         run: npx reveal-md slides.md --static public
       - name: Deploy pages
-        uses: maxheld83/ghpages@v0.2.1
-        env:
-          BUILD_DIR: public/
-          GH_PAT: ${{ secrets.GH_PAT }}
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: public
