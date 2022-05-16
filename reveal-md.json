@@ -1,6 +1,6 @@
 {
-  "title": "Intro to Python TDD Katas",
-  "theme": "sky",
+  "title": "Python TDD Katas Introduction",
+  "theme": "night",
   "highlightTheme": "monokai-sublime",
   "css": ["custom.css"],
   "assetsDir": "assets"

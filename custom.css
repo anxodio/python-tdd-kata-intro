@@ -1,1 +1,10 @@
 /* Here we can add custom CSS styles */
+
+.reveal blockquote {
+    width: 90%;
+    padding: 5px 30px 5px 30px;
+}
+
+.reveal section img {
+    border: 2px solid #eee;
+}
