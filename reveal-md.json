@@ -1,0 +1,7 @@
+{
+  "title": "Intro to Python TDD Katas",
+  "theme": "sky",
+  "highlightTheme": "monokai-sublime",
+  "css": ["custom.css"],
+  "assetsDir": "assets"
+}
