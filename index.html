@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>Intro to Python TDD Katas</title>
+    <title>Python TDD Katas Introduction</title>
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./dist/reset.css" />
     <link rel="stylesheet" href="./dist/reveal.css" />
-    <link rel="stylesheet" href="./dist/theme/sky.css" id="theme" />
+    <link rel="stylesheet" href="./dist/theme/night.css" id="theme" />
     <link rel="stylesheet" href="./css/highlight/monokai-sublime.css" />
 
     <link rel="stylesheet" href="./assets/custom.css" />
@@ -16,12 +16,124 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template"># Intro to Python TDD Katas
+      <div class="slides"><section  data-markdown><script type="text/template"># TDD Katas
 
-## Testing and blablabla
+## An introductory Python workshop
+</script></section><section  data-markdown><script type="text/template">
+## What is software testing
+</script></section><section  data-markdown><script type="text/template">
+> Software testing is the act of examining the artifacts and the behavior of the software under test by validation and verification
 
-<aside class="notes"><p>Here we can add speaker notes</p>
+_Wikipedia definition_
+
+<aside class="notes"><p>Pot semblar complexe, però simplificant artifact és el output d&#39;una peça de software
+(en python pot ser dificil d&#39;entendre), i el SUT es el que estem provant (paraula tipica)
+Al final busca comprovar requeriments, descobrir bugs, etc</p>
+<p>Amb el public, se us acuden exemples? beta testing per exemple ho coneix quasi tothom</p>
 </aside></script></section><section  data-markdown><script type="text/template">
+You can test software manually, but also it can be
+
+### ✨🌈 automated 🌈✨
+</script></section><section  data-markdown><script type="text/template">
+### Types of automated tests
+
+- Unit tests
+- Integration tests
+- End to end tests
+- And more (functional, acceptance, performance, ui...)
+
+<aside class="notes"><p>Explicar que ens centrarem sobretot en els unit test</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+### Types of automated tests
+
+![Testing pyramid](img/pyramid.png)
+
+<aside class="notes"><p>Passar per sobre per explicar la importancia dels unit test com a fonaments</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Testing in Python
+</script></section><section  data-markdown><script type="text/template">
+### A simple Python test example
+
+```python
+def add_one(x: int) -> int:
+    return x + 1
+```
+
+```python
+def test_add_one() -> None:
+    assert add_one(-1) == 0
+    assert add_one(7) == 8
+```
+
+<!-- .element: class="fragment fade-in" -->
+
+<aside class="notes"><p>Aprofitar per explicar type hinting com a forma extra de validar el nostre software
+Explicar que hi ha varies formes de testejar en python, aqui simplifiquem a pytest</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+### How executing tests looks like
+
+
+![Example OK test output](img/test_ok.png)
+</script></section><section  data-markdown><script type="text/template">
+### How executing tests looks like
+
+
+![Example failing tests output](img/test_fail.png)
+
+</script></section><section  data-markdown><script type="text/template">
+## Test Driven Development (TDD)
+</script></section><section  data-markdown><script type="text/template">
+> TDD is a **software development process** relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. This is as **opposed to software being developed first and test cases created later**.
+
+_Wikipedia definition_
+
+<aside class="notes"><p>Massa llarg, demanem al public centrarse en la negreta: proces, metode, test abans
+Es podria entrar més en detall (detroit o london per exemple), pero no es el moment</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+### Three Rules of TDD
+
+1. Write production code only to pass a failing unit test.
+2. Write no more of a unit test than sufficient to fail (compilation failures are failures).
+3. Write no more production code than necessary to pass the one failing unit test.
+</script></section><section  data-markdown><script type="text/template">
+### Red Green Refactor
+
+![Red green refactor diagram](img/red_green_refactor.jpg)
+</script></section><section  data-markdown><script type="text/template">
+### TDD Example
+
+```python
+def test_add_two_numbers() -> None:
+    assert add_two_numbers(1, 2) == 3
+    assert add_two_numbers(-5, 5) == 0
+```
+
+NameError: name 'add_two_numbers' is not defined
+
+<!-- .element: style="color: red" class="fragment fade-in" -->
+</script></section><section  data-markdown><script type="text/template">
+### TDD Example
+
+```python
+def add_two_numbers(x: int, y: int) -> int:
+    return x + y
+
+def test_add_two_numbers() -> None:
+    assert add_two_numbers(1, 2) == 3
+    assert add_two_numbers(-5, 5) == 0
+```
+
+Test OK
+
+<!-- .element: style="color: green" class="fragment fade-in" -->
+</script></section><section  data-markdown><script type="text/template">
+## What is a Kata
+
+TODO
+A code kata in programming is an exercise aimed at programmers developing their skills through practice and repetition.
+</script></section><section  data-markdown><script type="text/template">
+## THE KATA
+</script></section><section  data-markdown><script type="text/template">
 # ¡Gracias!
 </script></section></div>
     </div>
