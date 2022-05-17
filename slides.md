@@ -149,13 +149,79 @@ Test OK
 
 ## What is a Kata
 
-TODO
-A code kata in programming is an exercise aimed at programmers developing their skills through practice and repetition.
+
+> A code kata is an exercise in programming which helps software developers improve their skills through practice and repetition
+
+_Dave Thomas, co-author of the book The Pragmatic Programmer_
+
+Note:
+Explicar que s'acostuma a fer en comunitat, pair o mob, practicar TDD o SOLID o coses concretes,
+que molts cops son exercicis senzills perque importa el com...
 
 ---
 
-## THE KATA
+## So let's work
+### The Greeting Kata
+
+Note:
+Pensada senzilla per practicar el testing i el refactoring continuu
 
 ---
 
-# ¡Gracias!
+### Requirement 1
+Write a method `greet(name)` that interpolates name in a simple greeting.
+
+_For example, when `name` is `"Alice"`, the method should return a string `"Hello, Alice."`._
+
+---
+
+### Requirement 2
+Handle nulls by introducing a stand-in.
+
+_For example, when `name` is `null`, then the method should return the string `"Hello, my friend."`._
+
+---
+
+### Requirement 3
+Handle shouting. When `name` is all uppercase, then the method should shout back to the user.
+
+_For example, when `name` is `"JERRY"` then the method should return the string `"HELLO JERRY!"`._
+
+---
+
+### Requirement 4
+Handle two names of input. When `name` is an array of **two** names then both names should be printed.
+
+_For example, when name is `["Jill", "Jane"]`, then the method should return the string `"Hello, Jill and Jane."`_
+
+---
+
+### Requirement 5
+Handle an arbitrary number of names as input. When `name` represents more than two names, separate them with commas and close with an Oxford comma and "and".
+
+_For example, when name is `["Amy", "Brian", "Charlotte"]`, then the method should return the string `"Hello, Amy, Brian, and Charlotte."`_
+
+---
+
+### Requirement 6
+Allow mixing of normal and shouted names by separating the response into two greetings.
+
+_For example, when name is `["Amy", "BRIAN", "Charlotte"]`, then the method should return the string `"Hello, Amy and Charlotte. AND HELLO BRIAN!"`_
+
+---
+
+### Requirement 7
+If any entries in `name` are a string containing a comma, split it as its own input.
+
+_For example, when `name` is `["Bob", "Charlie, Dianne"]`, then the method should return the string `"Hello, Bob, Charlie, and Dianne."`._
+
+---
+
+### Requirement 8
+Allow the input to escape intentional commas introduced by Requirement 7. These can be escaped in the same manner that CSV is, with double quotes surrounding the entry.
+
+_For example, when `name` is `["Bob", "\"Charlie, Dianne\""]`, then the method should return the string `"Hello, Bob and Charlie, Dianne."`._
+
+---
+
+# Thank you!
