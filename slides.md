@@ -8,13 +8,9 @@
 
 ---
 
-> Software testing is the act of examining the artifacts and the behavior of the software under test by validation and verification
-
-_Wikipedia definition_
+> Software Testing is a method to check whether the actual software product matches expected requirements and is defect free
 
 Note:
-Pot semblar complexe, però simplificant artifact és el output d'una peça de software
-(en python pot ser dificil d'entendre), i el SUT es el que estem provant (paraula tipica)
 Al final busca comprovar requeriments, descobrir bugs, etc
 
 Amb el public, se us acuden exemples? beta testing per exemple ho coneix quasi tothom
@@ -92,12 +88,9 @@ Explicar que hi ha varies formes de testejar en python, aqui simplifiquem a pyte
 
 ---
 
-> TDD is a **software development process** relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. This is as **opposed to software being developed first and test cases created later**.
-
-_Wikipedia definition_
+> TDD is a **software development process** that relies on **writing the tests first** and then writing the code that pass those test in an **iterative** way.
 
 Note:
-Massa llarg, demanem al public centrarse en la negreta: proces, metode, test abans
 Es podria entrar més en detall (detroit o london per exemple), pero no es el moment
 
 ---
