@@ -4,6 +4,17 @@
 
 ---
 
+### Who we are
+
+#### Àngel Fernández (@anxodio)
+Staff Engineer at Holaluz
+
+-
+#### Israel Saeta (@dukebody)
+Engineering Manager at Travelperk
+
+---
+
 ## What is software testing
 
 ---
