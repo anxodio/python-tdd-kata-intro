@@ -18,7 +18,7 @@
     <div class="reveal">
       <div class="slides"><section  data-markdown><script type="text/template"># TDD Katas
 
-## An introductory Python workshop
+## A Python workshop
 </script></section><section  data-markdown><script type="text/template">
 ### Who we are
 
@@ -26,20 +26,21 @@
 Staff Engineer at Holaluz
 
 -
+
 #### Israel Saeta (@dukebody)
 Engineering Manager at Travelperk
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section ><section data-markdown><script type="text/template">
 ## What is software testing
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 > Software Testing is a method to check whether the actual software product matches expected requirements and is defect free
 
 <aside class="notes"><p>Al final busca comprovar requeriments, descobrir bugs, etc</p>
 <p>Amb el public, se us acuden exemples? beta testing per exemple ho coneix quasi tothom</p>
-</aside></script></section><section  data-markdown><script type="text/template">
+</aside></script></section><section data-markdown><script type="text/template">
 You can test software manually, but also it can be
 
 ### ✨🌈 automated 🌈✨
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 ### Types of automated tests
 
 - Unit tests
@@ -48,15 +49,15 @@ You can test software manually, but also it can be
 - And more (functional, acceptance, performance, ui...)
 
 <aside class="notes"><p>Explicar que ens centrarem sobretot en els unit test</p>
-</aside></script></section><section  data-markdown><script type="text/template">
+</aside></script></section><section data-markdown><script type="text/template">
 ### Types of automated tests
 
 ![Testing pyramid](img/pyramid.png)
 
 <aside class="notes"><p>Passar per sobre per explicar la importancia dels unit test com a fonaments</p>
-</aside></script></section><section  data-markdown><script type="text/template">
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
 ## Testing in Python
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 ### A simple Python test example
 
 ```python
@@ -74,34 +75,34 @@ def test_add_one() -> None:
 
 <aside class="notes"><p>Aprofitar per explicar type hinting com a forma extra de validar el nostre software
 Explicar que hi ha varies formes de testejar en python, aqui simplifiquem a pytest</p>
-</aside></script></section><section  data-markdown><script type="text/template">
+</aside></script></section><section data-markdown><script type="text/template">
 ### How executing tests looks like
 
 
 ![Example OK test output](img/test_ok.png)
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 ### How executing tests looks like
 
 
 ![Example failing tests output](img/test_fail.png)
 
-</script></section><section  data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 ## Test Driven Development (TDD)
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 > TDD is a **software development process** that relies on **writing the tests first** and then writing the code that pass those test in an **iterative** way.
 
 <aside class="notes"><p>Es podria entrar més en detall (detroit o london per exemple), pero no es el moment</p>
-</aside></script></section><section  data-markdown><script type="text/template">
+</aside></script></section><section data-markdown><script type="text/template">
 ### Three Rules of TDD
 
 1. Write production code only to pass a failing unit test.
 2. Write no more of a unit test than sufficient to fail (compilation failures are failures).
 3. Write no more production code than necessary to pass the one failing unit test.
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 ### Red Green Refactor
 
 ![Red green refactor diagram](img/red_green_refactor.jpg)
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 ### TDD Example
 
 ```python
@@ -113,7 +114,7 @@ def test_add_two_numbers() -> None:
 NameError: name 'add_two_numbers' is not defined
 
 <!-- .element: style="color: red" class="fragment fade-in" -->
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 ### TDD Example
 
 ```python
@@ -128,7 +129,7 @@ def test_add_two_numbers() -> None:
 Test OK
 
 <!-- .element: style="color: green" class="fragment fade-in" -->
-</script></section><section  data-markdown><script type="text/template">
+</script></section></section><section  data-markdown><script type="text/template">
 ## What is a Kata
 
 
@@ -140,50 +141,50 @@ _Dave Thomas, co-author of the book The Pragmatic Programmer_
 que molts cops son exercicis senzills perque importa el com...</p>
 </aside></script></section><section  data-markdown><script type="text/template">
 ## So let's work
-### The Greeting Kata
+### The URL Shortener Kata
 
-<aside class="notes"><p>Pensada senzilla per practicar el testing i el refactoring continuu</p>
-</aside></script></section><section  data-markdown><script type="text/template">
+</script></section><section  data-markdown><script type="text/template">
 ### Requirement 1
-Write a method `greet(name)` that interpolates name in a simple greeting.
+Write a library that shortens URLs
 
-_For example, when `name` is `"Alice"`, the method should return a string `"Hello, Alice."`._
+> With a method that accepts a long URL and returns the shortened URL, like `https://short.url/abc1234`
 </script></section><section  data-markdown><script type="text/template">
 ### Requirement 2
-Handle nulls by introducing a stand-in.
+Store URLs
 
-_For example, when `name` is `null`, then the method should return the string `"Hello, my friend."`._
+> The long and shortened URL should be stored together (some in-memory store is enough)
 </script></section><section  data-markdown><script type="text/template">
 ### Requirement 3
-Handle shouting. When `name` is all uppercase, then the method should shout back to the user.
+Translate method
 
-_For example, when `name` is `"JERRY"` then the method should return the string `"HELLO JERRY!"`._
+> The library should have a method called `translate` which takes in a shortened URL and returns the long URL
 </script></section><section  data-markdown><script type="text/template">
 ### Requirement 4
-Handle two names of input. When `name` is an array of **two** names then both names should be printed.
+The counter
 
-_For example, when name is `["Jill", "Jane"]`, then the method should return the string `"Hello, Jill and Jane."`_
+> The library should track the number of times the short URL is visited.
 </script></section><section  data-markdown><script type="text/template">
 ### Requirement 5
-Handle an arbitrary number of names as input. When `name` represents more than two names, separate them with commas and close with an Oxford comma and "and".
+Statistics
 
-_For example, when name is `["Amy", "Brian", "Charlotte"]`, then the method should return the string `"Hello, Amy, Brian, and Charlotte."`_
+> An statistics method that accepts a long or short URL and returns the short, the long URL, and the number of times that was accessed.
 </script></section><section  data-markdown><script type="text/template">
 ### Requirement 6
-Allow mixing of normal and shouted names by separating the response into two greetings.
+Validation
 
-_For example, when name is `["Amy", "BRIAN", "Charlotte"]`, then the method should return the string `"Hello, Amy and Charlotte. AND HELLO BRIAN!"`_
+> If an invalid URL is provided, an understandable error should be raised
 </script></section><section  data-markdown><script type="text/template">
 ### Requirement 7
-If any entries in `name` are a string containing a comma, split it as its own input.
+Duplicates
 
-_For example, when `name` is `["Bob", "Charlie, Dianne"]`, then the method should return the string `"Hello, Bob, Charlie, and Dianne."`._
+> Detect existing URLs and return the same short URL instead of creating a duplicate
 </script></section><section  data-markdown><script type="text/template">
 ### Requirement 8
-Allow the input to escape intentional commas introduced by Requirement 7. These can be escaped in the same manner that CSV is, with double quotes surrounding the entry.
+Log access
 
-_For example, when `name` is `["Bob", "\"Charlie, Dianne\""]`, then the method should return the string `"Hello, Bob and Charlie, Dianne."`._
+> Log the datetime each short url was accessed and create a log method similar to the statistics method, returning the complete history
 </script></section><section  data-markdown><script type="text/template">
+
 # Thank you!
 </script></section></div>
     </div>
