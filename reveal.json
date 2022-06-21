@@ -1,5 +1,5 @@
 {
-  "controls": false,
-  "navigationMode": "linear",
+  "controls": true,
+  "navigationMode": "default",
   "transition": "slide"
 }
